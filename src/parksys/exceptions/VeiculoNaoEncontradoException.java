@@ -1,4 +1,4 @@
-package ParkSys.exceptions;
+package parksys.exceptions;
 
 public class VeiculoNaoEncontradoException extends Exception {
 
