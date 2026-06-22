@@ -74,7 +74,8 @@ public class GerenciadorEstacionamento {
         return mensalistas;
     }
 
-    // M03 - synchronized evita a race condition: sem essa proteção, duas threads
+   
+     // M03 - synchronized evita a race condition: sem essa proteção, duas threads
     // poderiam verificar a disponibilidade da mesma vaga simultaneamente e
     // ambas enxergariam LIVRE, resultando em dupla ocupação.
     // T03/T04 - Usa getVagasOcupadas() do enum para saber quantas vagas consecutivas alocar
@@ -155,7 +156,9 @@ public class GerenciadorEstacionamento {
         return null;
     }
 
+
     // M03 - synchronized evita alterações simultâneas na lista de registros e no mapa de vagas
+
     public synchronized void registrarSaida(String placa) throws VeiculoNaoEncontradoException {
 
         for (Registro registro : registros) {
