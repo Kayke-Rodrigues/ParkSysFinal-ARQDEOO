@@ -73,7 +73,7 @@ src/
 ```bash
 # 1. Clone o repositório
 git clone https://github.com/Kayke-Rodrigues/ParkSysFinal-ARQDEOO.git
-cd ParkSys-ARQDEOO
+cd ParkSysFinal-ARQDEOO
 
 # 2. Compile (a partir da raiz do projeto)
 cd src
