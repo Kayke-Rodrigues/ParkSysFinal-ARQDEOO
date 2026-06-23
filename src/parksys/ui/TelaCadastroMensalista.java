@@ -44,41 +44,43 @@ public class TelaCadastroMensalista extends JFrame {
     }
 
     private void construirUI() {
-        JPanel painel = new JPanel(new GridBagLayout());
-        painel.setBorder(BorderFactory.createEmptyBorder(15, 20, 15, 20));
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(6, 6, 6, 6);
-        gbc.fill = GridBagConstraints.HORIZONTAL;
+    JPanel painel = new JPanel(new GridLayout(4, 2, 10, 15));
+    painel.setBorder(BorderFactory.createEmptyBorder(20, 30, 20, 30));
 
-        gbc.gridx = 0; gbc.gridy = 0;
-        painel.add(new JLabel("Nome:"), gbc);
-        gbc.gridx = 1;
-        campNome = new JTextField(18);
-        painel.add(campNome, gbc);
+    JLabel lblNome = new JLabel("Nome:");
+    lblNome.setFont(new Font("Arial", Font.PLAIN, 14));
+    campNome = new JTextField();
+    campNome.setFont(new Font("Arial", Font.PLAIN, 14));
 
-        gbc.gridx = 0; gbc.gridy = 1;
-        painel.add(new JLabel("Placa:"), gbc);
-        gbc.gridx = 1;
-        campPlaca = new JTextField(18);
-        painel.add(campPlaca, gbc);
+    JLabel lblPlaca = new JLabel("Placa:");
+    lblPlaca.setFont(new Font("Arial", Font.PLAIN, 14));
+    campPlaca = new JTextField();
+    campPlaca.setFont(new Font("Arial", Font.PLAIN, 14));
 
-        gbc.gridx = 0; gbc.gridy = 2;
-        painel.add(new JLabel("Vaga Reservada (ex: A05):"), gbc);
-        gbc.gridx = 1;
-        campVaga = new JTextField(18);
-        painel.add(campVaga, gbc);
+    JLabel lblVaga = new JLabel("Vaga (ex: A05):");
+    lblVaga.setFont(new Font("Arial", Font.PLAIN, 14));
+    campVaga = new JTextField();
+    campVaga.setFont(new Font("Arial", Font.PLAIN, 14));
 
-        gbc.gridx = 0; gbc.gridy = 3; gbc.gridwidth = 2;
-        JButton btnCadastrar = new JButton("Cadastrar");
-        btnCadastrar.setBackground(new Color(70, 130, 180));
-        btnCadastrar.setForeground(Color.WHITE);
-        btnCadastrar.setFocusPainted(false);
-        btnCadastrar.setFont(new Font("Arial", Font.BOLD, 13));
-        btnCadastrar.addActionListener(e -> cadastrar());
-        painel.add(btnCadastrar, gbc);
+    JLabel lblVazio = new JLabel("");
+    JButton btnCadastrar = new JButton("Cadastrar");
+    btnCadastrar.setBackground(new Color(70, 130, 180));
+    btnCadastrar.setForeground(Color.WHITE);
+    btnCadastrar.setFocusPainted(false);
+    btnCadastrar.setFont(new Font("Arial", Font.BOLD, 14));
+    btnCadastrar.addActionListener(e -> cadastrar());
 
-        add(painel);
-    }
+    painel.add(lblNome);
+    painel.add(campNome);
+    painel.add(lblPlaca);
+    painel.add(campPlaca);
+    painel.add(lblVaga);
+    painel.add(campVaga);
+    painel.add(lblVazio);
+    painel.add(btnCadastrar);
+
+    add(painel);
+}
 
     private void cadastrar() {
         String nome  = campNome.getText().trim();
