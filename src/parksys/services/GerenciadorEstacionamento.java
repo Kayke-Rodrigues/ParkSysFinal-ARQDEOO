@@ -126,7 +126,7 @@ public class GerenciadorEstacionamento {
                 }
                 Registro registro = new Registro(new Veiculo(placa, tipo), idPrincipal);
                 registro.setThreadOrigem(Thread.currentThread().getName());
-                registro.setVagasExtras(vagasConsecutivas.subList(1, vagasConsecutivas.size()));
+                registro.setVagasExtras(new ArrayList<>(vagasConsecutivas.subList(1, vagasConsecutivas.size())));
                 registros.add(registro);
                 System.out.println("Veículo " + placa + " (" + tipo.getNome()
                         + ") estacionado nas vagas: " + String.join(", ", vagasConsecutivas));
